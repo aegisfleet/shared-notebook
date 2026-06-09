@@ -30,6 +30,12 @@ tags: ["犬"]
 - [これだけペット](https://www.paypay-insurance.co.jp/promotion/pet/app/)
   - 安心プラン: 1,850円/月
 
+## 環境
+
+- 監視カメラ
+  - [アルフレッドカメラ](https://alfred.camera/ja)
+    - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
+
 ### 日用品
 
 - [ドッグフード](https://www.amazon-hikaku.com/categories/%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%89/)
