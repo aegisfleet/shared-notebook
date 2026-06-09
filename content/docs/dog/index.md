@@ -22,6 +22,7 @@ tags: ["犬"]
 - 約50万円
 
 ![初期費用](initial_cost.jpg)
+![お店のポップ](shop-pop.jpg)
 
 ## ランニングコスト
 
