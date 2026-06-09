@@ -22,24 +22,38 @@
     el.dataset.src = el.innerHTML;
   });
 
+  let renderCount = 0;
+
   /**
    * 全ダイアグラムを指定テーマで再描画する
    */
   async function renderMermaid() {
+    const theme = getMermaidTheme();
     mermaid.initialize({
       startOnLoad: false,
-      theme: getMermaidTheme(),
+      theme: theme,
       securityLevel: 'loose',
       flowchart: { curve: 'basis' }
     });
 
-    // ソースを復元し、処理済みフラグを除去してから再描画
-    elements.forEach(el => {
-      el.removeAttribute('data-processed');
-      el.innerHTML = el.dataset.src;
-    });
+    renderCount++;
+    const currentRenderId = renderCount;
 
-    await mermaid.run({ querySelector: '.mermaid' });
+    for (let i = 0; i < elements.length; i++) {
+      const el = elements[i];
+      const id = `mermaid-svg-${currentRenderId}-${i}`;
+      const code = el.dataset.src;
+
+      try {
+        const { svg } = await mermaid.render(id, code);
+        if (currentRenderId !== renderCount) return;
+        el.innerHTML = svg;
+      } catch (err) {
+        console.error('Mermaid render error:', err);
+        if (currentRenderId !== renderCount) return;
+        el.innerHTML = `<pre class="mermaid-error" style="color:red; text-align:left;">${err.message || err}</pre>`;
+      }
+    }
   }
 
   // 初回描画

@@ -13,9 +13,10 @@
   border-radius: 8px;
 }
 
-/* --- ダーク時のMermaidダイアグラム背景 --- */
-.dark .mermaid {
-  background: transparent;
+/* --- Mermaidダイアグラム背景の透過化 --- */
+.mermaid,
+.mermaid svg {
+  background: transparent !important;
 }
 
 /* --- ヘッダーのカスタムスタイル --- */
