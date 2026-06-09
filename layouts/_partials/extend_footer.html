@@ -34,7 +34,7 @@
    */
   async function renderMermaid() {
     const theme = getMermaidTheme();
-    mermaid.initialize({
+    await mermaid.initialize({
       startOnLoad: false,
       theme: theme,
       securityLevel: 'loose',
@@ -65,14 +65,14 @@
   await renderMermaid();
 
   // PaperMod のテーマ切り替えを監視する
-  // テーマ変更時は <html class="dark"> の付け外しが発生する
+  // テーマ変更時は <html data-theme="dark"> のような変更が発生する
   let debounceTimer;
   new MutationObserver(() => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(renderMermaid, 100);
   }).observe(document.documentElement, {
     attributes: true,
-    attributeFilter: ['class']
+    attributeFilter: ['class', 'data-theme']
   });
 </script>
 {{- end }}
