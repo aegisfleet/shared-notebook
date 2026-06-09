@@ -2,10 +2,6 @@
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
 
-  /**
-   * 現在のサイトテーマに対応した Mermaid テーマ名を返す
-   * PaperMod は localStorage の 'pref-theme' に "dark" / "light" を保存する
-   */
   function getMermaidTheme() {
     const stored = localStorage.getItem('pref-theme');
     if (stored === 'dark') return 'dark';
@@ -13,13 +9,22 @@
     return globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
   }
 
+  /**
+   * HTML エンティティをデコードするヘルパー
+   */
+  function decodeHTML(html) {
+    const txt = document.createElement('textarea');
+    txt.innerHTML = html;
+    return txt.value;
+  }
+
   // body 末尾に配置されているため DOM は確実にロード済み
   const elements = Array.from(document.querySelectorAll('.mermaid'));
 
   // Mermaid がレンダリング前に innerHTML を上書きするため、先にソースを退避する
-  // safeHTML で出力された内容: <br> は HTML 要素、--> はテキストのまま保持
   elements.forEach(el => {
-    el.dataset.src = el.innerHTML;
+    // HTML エンティティをデコードし、Windows の改行コード(\r)を除去して退避
+    el.dataset.src = decodeHTML(el.innerHTML).replace(/\r/g, '');
   });
 
   let renderCount = 0;
