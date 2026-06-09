@@ -24,7 +24,7 @@
   // Mermaid がレンダリング前に innerHTML を上書きするため、先にソースを退避する
   elements.forEach(el => {
     // HTML エンティティをデコードし、Windows の改行コード(\r)を除去して退避
-    el.dataset.src = decodeHTML(el.innerHTML).replace(/\r/g, '');
+    el.dataset.src = decodeHTML(el.innerHTML).replaceAll('\r', '');
   });
 
   let renderCount = 0;
