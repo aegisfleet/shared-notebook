@@ -7,7 +7,7 @@
     const stored = localStorage.getItem('pref-theme');
     if (stored === 'dark') return 'dark';
     if (stored === 'light') return 'default';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+    return globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
   }
 
   document.addEventListener('DOMContentLoaded', function () {
