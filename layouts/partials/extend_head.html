@@ -1,24 +1,4 @@
 {{- if .Params.mermaid | default (site.Params.mermaid) }}
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-
-  /**
-   * Mermaid テーマをサイトのカラーテーマに合わせて返す
-   */
-  function getMermaidTheme() {
-    const stored = localStorage.getItem('pref-theme');
-    if (stored === 'dark') return 'dark';
-    if (stored === 'light') return 'default';
-    return globalThis.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
-  }
-
-  mermaid.initialize({
-    startOnLoad: true,
-    theme: getMermaidTheme(),
-    securityLevel: 'loose',
-    flowchart: { curve: 'basis' }
-  });
-</script>
 <style>
   /* Mermaid ダイアグラムのコンテナスタイル */
   .mermaid {
