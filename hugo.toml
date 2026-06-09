@@ -1,0 +1,85 @@
+baseURL = "https://raizi.github.io/shared-notebook/"
+locale = "ja"
+title = "Shared Notebook"
+theme = "PaperMod"
+
+# 日本語ページネーション
+paginate = 10
+
+# Goldmark (Markdown パーサー) の設定
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # HTML タグ（<br> など）を Markdown 内で使用可能にする
+
+  [markup.highlight]
+    style = "dracula"
+    lineNos = false
+    noClasses = false
+
+# PaperMod テーマ設定
+[params]
+  # ダーク/ライトモード切り替え
+  defaultTheme = "auto"      # "auto" | "dark" | "light"
+  disableThemeToggle = false
+
+  # サイト情報
+  author = "raizi"
+  description = "個人ノート・ドキュメント共有サイト"
+
+  # ホームページレイアウト
+  homeInfoParams.Title   = "📓 Shared Notebook"
+  homeInfoParams.Content = "個人の知識・メモ・調査結果をまとめたノートサイト"
+
+  # Mermaid.js を有効化するカスタムパラメータ
+  mermaid = true
+
+  # パンくずリスト
+  ShowBreadCrumbs = true
+
+  # 読了時間・最終更新日を表示
+  ShowReadingTime   = true
+  ShowLastMod       = true
+
+  # SNS シェアボタン非表示
+  ShowShareButtons = false
+
+  # ページナビゲーション
+  ShowPostNavLinks = true
+
+  # コードコピーボタン
+  ShowCodeCopyButtons = true
+
+  # 検索を有効化
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort      = true
+    location        = 0
+    distance        = 1000
+    threshold       = 0.4
+    minMatchCharLen = 1
+    limit           = 10
+    keys            = ["title", "permalink", "summary", "content"]
+
+# メニュー
+[[menus.main]]
+  identifier = "docs"
+  name       = "ドキュメント"
+  url        = "/docs/"
+  weight     = 10
+
+[[menus.main]]
+  identifier = "search"
+  name       = "🔍 検索"
+  url        = "/search/"
+  weight     = 20
+
+[[menus.main]]
+  identifier = "tags"
+  name       = "タグ"
+  url        = "/tags/"
+  weight     = 30
+
+# 出力形式（検索用 JSON を含む）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

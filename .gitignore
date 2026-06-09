@@ -1,0 +1,11 @@
+# Hugo ビルド成果物
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Hugo のキャッシュ
+hugo_cache/
+
+# OS 固有ファイル
+.DS_Store
+Thumbs.db

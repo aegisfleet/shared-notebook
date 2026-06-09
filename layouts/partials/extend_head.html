@@ -1,0 +1,65 @@
+{{- if .Params.mermaid | default (site.Params.mermaid) }}
+<script>
+  /**
+   * Mermaid テーマをサイトのカラーテーマに合わせて動的に切り替える
+   */
+  function getMermaidTheme() {
+    const stored = localStorage.getItem('pref-theme');
+    if (stored === 'dark') return 'dark';
+    if (stored === 'light') return 'default';
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    const mermaidTheme = getMermaidTheme();
+
+    // Mermaid を CDN から動的ロード
+    const script = document.createElement('script');
+    script.type = 'module';
+    script.innerHTML = `
+      import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+      mermaid.initialize({
+        startOnLoad: false,
+        theme: '${mermaidTheme}',
+        securityLevel: 'loose',
+        flowchart: { curve: 'basis' }
+      });
+
+      // <code class="language-mermaid"> を <div class="mermaid"> に変換してレンダリング
+      document.querySelectorAll('pre code.language-mermaid').forEach(function(codeEl) {
+        const pre = codeEl.parentElement;
+        const div = document.createElement('div');
+        div.className = 'mermaid';
+        div.textContent = codeEl.textContent;
+        pre.parentNode.replaceChild(div, pre);
+      });
+
+      await mermaid.run();
+    `;
+    document.head.appendChild(script);
+  });
+
+  // テーマ切り替えボタン押下時に Mermaid テーマも更新
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      // 少し遅延させてから localStorage の値を読む
+      setTimeout(function () {
+        location.reload();
+      }, 100);
+    });
+  }
+</script>
+<style>
+  /* Mermaid ダイアグラムのコンテナスタイル */
+  .mermaid {
+    text-align: center;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+  }
+  .mermaid svg {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
+{{- end }}

@@ -1,0 +1,74 @@
+name: Hugo ビルド & GitHub Pages デプロイ
+
+on:
+  push:
+    branches:
+      - main
+  # 手動実行も可能にする
+  workflow_dispatch:
+
+# GitHub Pages へのデプロイに必要な権限
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同時デプロイを防ぐ（進行中のデプロイはキャンセルしない）
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# デフォルトシェルを bash に設定
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # ビルドジョブ
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.162.1
+    steps:
+      - name: Hugo のセットアップ
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "${{ env.HUGO_VERSION }}"
+          extended: true
+
+      - name: リポジトリのチェックアウト（サブモジュールを含む）
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # PaperMod テーマを取得
+          fetch-depth: 0         # 全履歴を取得（.GitInfo や .Lastmod に必要）
+
+      - name: GitHub Pages の設定
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Hugo でビルド
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          HUGO_ENVIRONMENT: production
+          TZ: Asia/Tokyo
+        run: |
+          hugo \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: ビルド成果物のアップロード
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # デプロイジョブ
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: GitHub Pages へデプロイ
+        id: deployment
+        uses: actions/deploy-pages@v4

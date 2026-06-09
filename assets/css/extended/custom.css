@@ -1,0 +1,49 @@
+/* ===================================================
+   カスタム CSS — PaperMod テーマのオーバーライド
+   =================================================== */
+
+/* --- Mermaid ダイアグラムのスクロール対応 --- */
+.mermaid {
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+/* --- コードブロックのスタイル強化 --- */
+.highlight pre {
+  border-radius: 8px;
+}
+
+/* --- ダーク時のMermaidダイアグラム背景 --- */
+.dark .mermaid {
+  background: transparent;
+}
+
+/* --- ヘッダーのカスタムスタイル --- */
+.nav {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- タグのスタイル --- */
+.post-tags a {
+  border-radius: 4px;
+  font-size: 0.8rem;
+}
+
+/* --- テーブルのスタイル --- */
+.post-content table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.post-content table th,
+.post-content table td {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+}
+
+.post-content table th {
+  background: var(--code-bg);
+  font-weight: 600;
+}
