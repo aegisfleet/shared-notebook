@@ -36,6 +36,9 @@ tags: ["犬"]
   - [アルフレッドカメラ](https://alfred.camera/ja)
     - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
 
+![アプリのイメージ](surveillance-cameras.png)
+![寝てる](surveillance-cameras-2.png)
+
 ### 日用品
 
 - [ドッグフード](https://www.amazon-hikaku.com/categories/%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%89/)
