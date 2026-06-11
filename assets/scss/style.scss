@@ -37,10 +37,20 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
 @import "custom/pages/hero";
 {{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
 
+// Toggle dark/light switch visibility
+body .toggle-dark {
+    display: block;
+}
+
+body .toggle-light {
+    display: none;
+}
+
 // Dark Mode Custom Overrides for Landing Page
 [data-dark-mode] {
     --body-bg: #181921;
     --body-color: #dee2e6;
+    --text-default: #dee2e6;
     --text-muted: #b6b9be;
     --white: #181921;
     --light: #292a35;
@@ -49,9 +59,29 @@ $font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Me
     background-color: var(--body-bg) !important;
     color: var(--body-color) !important;
 
+    body .toggle-light {
+        display: block;
+    }
+
+    body .toggle-dark {
+        display: none;
+    }
+
     body {
         background-color: var(--body-bg) !important;
         color: var(--body-color) !important;
+    }
+
+    .btn-landing {
+        color: var(--text-default) !important;
+    }
+
+    .text-muted {
+        color: var(--text-muted) !important;
+    }
+
+    .social-link a {
+        color: var(--text-default) !important;
     }
 
     #topnav {
