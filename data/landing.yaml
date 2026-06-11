@@ -1,0 +1,16 @@
+hero:
+  enable: true
+  weight: 10
+  template: "hero"
+  title: "📓 Shared Notebook"
+  subtitle: "個人の知識・メモ・調査結果をまとめたノートサイト"
+  ctaButton:
+    icon: "rocket_launch"
+    btnText: "ドキュメントを見る"
+    url: "docs/"
+
+featureGrid:
+  enable: false
+
+imageCompare:
+  enable: false
