@@ -16,6 +16,7 @@ tags: ["犬"]
  
 
 ![パム](pamu.jpg)
+![お店のポップ](shop-pop.jpg)
 
 ## 初期費用
 
@@ -23,14 +24,17 @@ tags: ["犬"]
 
 ![初期費用](initial_cost.jpg)
 ![PayPay](paypay.png)
-![お店のポップ](shop-pop.jpg)
 
 ## ランニングコスト
 
 ### 任意保険
 
+- [うちの子](https://www.ipet-ins.com/products/uchinoko/fee/) ※ペットショップ提携保険
+  - 70%補償プラン: 3,090円/月
 - [これだけペット](https://www.paypay-insurance.co.jp/promotion/pet/app/)
   - 安心プラン: 1,850円/月
+- [ペットほけんフィット](https://www.fpc-pet.co.jp/lp10)
+  - 70%補償プラン: 1,580円/月
 
 ## 環境
 
