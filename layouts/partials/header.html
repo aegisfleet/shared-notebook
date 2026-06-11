@@ -4,14 +4,10 @@
         <!-- Logo container-->
         <a class="logo" aria-label="Home" href='{{ relLangURL "" }}'>
             <div class="small">
-                {{ with resources.Get "images/logos/mark.svg" }}
-                        {{ .Content | safeHTML }}
-                {{ end }}
+                <img src="{{ "favicon-32x32.png" | relURL }}" alt="Home" width="32" height="32" style="height: 31px; width: auto;">
             </div>
             <div class="big">
-                {{ with resources.Get "images/logos/logo.svg" }}
-                        {{ .Content | safeHTML }}
-                {{ end }}
+                <img src="{{ "favicon-32x32.png" | relURL }}" alt="Home" width="32" height="32" style="height: 31px; width: auto;">
             </div>
         </a>
         <!-- End Logo container-->
