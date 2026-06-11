@@ -61,7 +61,7 @@ If so, collect and consolidate the items config from each enabled instance
             (function() {
                 const configEl = document.getElementById("image-compare-configs");
                 if (configEl) {
-                    const configs = JSON.parse(configEl.getAttribute("data-configs") || "[]");
+                    const configs = JSON.parse(configEl.dataset.configs || "[]");
                     const viewers = document.querySelectorAll(".image-compare");
                     viewers.forEach((element, i) => {
                         let view = new ImageCompare(element, configs[i]).mount();
