@@ -3,7 +3,7 @@
     <div class="sidebar-brand">
         <a href='{{ with .Site.Params.docs.logoLinkURL }}{{ . }}{{ else }}{{ relLangURL "" }}{{ end }}'
             aria-label="HomePage" alt="HomePage">
-            <img src="{{ "favicon-32x32.png" | relURL }}" alt="Home" width="32" height="32"
+            <img src='{{ "favicon-32x32.png" | relURL }}' alt="Home" width="32" height="32"
                 style="height: 31px; width: auto;">
         </a>
     </div>
@@ -61,7 +61,8 @@
                                                             <li
                                                                 class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}">
                                                                 <a class="sidebar-nested-link"
-                                                                    href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                                                    href="{{ .Permalink }}">{{ .Title }}</a>
+                                                            </li>
                                                             {{ end }}
                                                         </ul>
                                                     </div>
@@ -70,7 +71,8 @@
                                                 <li
                                                     class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}">
                                                     <a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title
-                                                        }}</a></li>
+                                                        }}</a>
+                                                </li>
                                                 {{ end }}
                                                 {{ end }}
                                             </ul>
@@ -79,7 +81,8 @@
                                     {{ else }}
                                     <li
                                         class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}">
-                                        <a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
+                                        <a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                                    </li>
                                     {{ end }}
                                     {{ end }}
                                 </ul>
@@ -88,7 +91,8 @@
                         {{ else }}
                         <li
                             class="{{ if $active }}current{{ end }} {{ if eq .Site.Params.docs.sidebarIcons true -}}{{ else }}no-icon{{ end }}">
-                            <a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a></li>
+                            <a class="sidebar-nested-link" href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>
                         {{ end }}
                         {{ end }}
                     </ul>
