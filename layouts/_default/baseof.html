@@ -56,14 +56,18 @@ If so, collect and consolidate the items config from each enabled instance
 
         <!-- Image Compare Viewer Config -->
         {{ if ($.Scratch.Get "image_compare_enabled") }}
+        <div id="image-compare-configs" data-configs='[{{ delimit ($ic.Get "config") "," }}]' style="display: none;"></div>
         <script>
-            const viewers = document.querySelectorAll(".image-compare");
-            let configs = [
-                {{ (delimit ($ic.Get `config`) `,`) | safeJS }}
-            ];
-            viewers.forEach((element, i) => {
-                let view = new ImageCompare(element, configs[i]).mount();
-            });
+            (function() {
+                const configEl = document.getElementById("image-compare-configs");
+                if (configEl) {
+                    const configs = JSON.parse(configEl.getAttribute("data-configs") || "[]");
+                    const viewers = document.querySelectorAll(".image-compare");
+                    viewers.forEach((element, i) => {
+                        let view = new ImageCompare(element, configs[i]).mount();
+                    });
+                }
+            })();
         </script>
         {{ end }}
 
