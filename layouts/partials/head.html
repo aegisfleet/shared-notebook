@@ -15,7 +15,7 @@
     <!-- Dark Mode Init -->
     {{ if eq .Site.Params.docs.darkMode true -}}
         {{ $darkModeInit := resources.Get "/docs/js/darkmode-init.js" | js.Build | minify -}}
-        <script>{{ $darkModeInit.Content | safeJS }}</script>
+        <script src="{{ $darkModeInit.RelPermalink }}"></script>
     {{ end -}}
 
     <!-- Google Fonts -->
