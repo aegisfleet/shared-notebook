@@ -1,0 +1,101 @@
+/* Template Name: LotusLabs Docs
+   Author: Colin Wilson
+   E-mail: colin.wilson@proton.me
+   Created: October 2022
+   Version: 1.0.0
+   File Description: Main CSS file of the Landing Page template (overridden with Dark Mode support)
+*/
+
+//Custom Font Variables
+$font-family-secondary:  {{ .Site.Params.secondary_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-sans-serif: {{ .Site.Params.sans_serif_font | default "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Ubuntu'" }};
+$font-family-monospace:  {{ .Site.Params.mono_font | default "SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace" }};
+
+//Core files
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "variables";
+@import "bootstrap/mixins";
+@import "bootstrap/bootstrap";
+
+// Plugins
+@import "custom/plugins/icons/google-material";
+
+// Structure
+@import "custom/structure/general";
+@import "custom/structure/topbar";
+@import "custom/structure/footer";
+
+// // Components
+@import "custom/components/buttons";
+@import "custom/components/badge";
+@import "custom/components/backgrounds";
+
+// // Pages
+@import "custom/pages/features";
+@import "custom/pages/helper";
+@import "custom/pages/hero";
+{{ if ($.Scratch.Get "image_compare_enabled") }}@import "custom/pages/image-compare-viewer";{{ end }}
+
+// Dark Mode Custom Overrides for Landing Page
+[data-dark-mode] {
+    --body-bg: #181921;
+    --body-color: #dee2e6;
+    --text-muted: #b6b9be;
+    --white: #181921;
+    --light: #292a35;
+    --dark: #dee2e6;
+
+    background-color: var(--body-bg) !important;
+    color: var(--body-color) !important;
+
+    body {
+        background-color: var(--body-bg) !important;
+        color: var(--body-color) !important;
+    }
+
+    #topnav {
+        background-color: var(--body-bg) !important;
+        &.scroll {
+            background-color: var(--body-bg) !important;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.15) !important;
+            .navigation-menu > li > a {
+                color: var(--text-default) !important;
+            }
+        }
+        &.nav-sticky {
+            background: var(--body-bg) !important;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.15) !important;
+            .navigation-menu > li > a {
+                color: var(--text-default) !important;
+            }
+            .logo .l-dark {
+                color: var(--text-default) !important;
+            }
+        }
+        .navigation-menu > li > a {
+            color: var(--text-default) !important;
+        }
+        .navbar-toggle span {
+            background-color: var(--text-default) !important;
+        }
+    }
+
+    .footer {
+        background-color: #111217 !important;
+        border-top: 1px solid #292a35 !important;
+        color: #b6b9be !important;
+        p {
+            color: #b6b9be !important;
+        }
+    }
+
+    .title-heading {
+        .heading {
+            color: #ffffff !important;
+        }
+        .para-desc {
+            color: #b6b9be !important;
+        }
+    }
+}
