@@ -22,8 +22,8 @@ tags: ["犬"]
 
 - 約50万円
 
-![初期費用](initial_cost.jpg)
 ![PayPay](paypay.png)
+![初期費用](initial_cost.jpg)
 
 ### 関連費用
 
