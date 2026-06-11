@@ -51,7 +51,7 @@ If so, collect and consolidate the items config from each enabled instance
         <!-- Dark Mode Switch JS -->
         {{ if eq .Site.Params.docs.darkMode true -}}
             {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
-            <script>{{ $darkModeSwitch.Content | safeJS }}</script>
+            <script src="{{ $darkModeSwitch.RelPermalink }}" defer></script>
         {{ end -}}
 
         <!-- Image Compare Viewer Config -->
