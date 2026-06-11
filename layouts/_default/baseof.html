@@ -3,9 +3,9 @@
 <!-- social_list -->
 {{ $social_params := slice "github" "twitter" "bluesky" "instagram" "rss" }}
 {{ range $social_params }}
-    {{ if isset site.Params.social . }}
-        {{ $.Scratch.Add "social_list" (slice .) }}
-    {{ end }}
+{{ if isset site.Params.social . }}
+{{ $.Scratch.Add "social_list" (slice .) }}
+{{ end }}
 {{ end }}
 
 <!--
@@ -14,65 +14,69 @@ If so, collect and consolidate the items config from each enabled instance
 -->
 {{ $ic := newScratch }}
 {{ range $value := .Site.Data.landing }}
-    {{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
-    {{ if eq $template "image_compare" }}
-        {{ if $value.enable }}
-        {{ $ic.Add "enabled" (slice $value.enable) }}
-            {{ range $value.items }}
-                {{ $ic.Add "config" (slice (.config | jsonify | safeJS)) }}
-            {{ end }}
-        {{ end }}
-    {{- end }}
+{{ $template := string (replaceRE `( |-{1,})` "_" $value.template) }}
+{{ if eq $template "image_compare" }}
+{{ if $value.enable }}
+{{ $ic.Add "enabled" (slice $value.enable) }}
+{{ range $value.items }}
+{{ $ic.Add "config" (slice (.config | jsonify | safeJS)) }}
+{{ end }}
+{{ end }}
+{{- end }}
 {{ end }}
 
 {{ $.Scratch.Set "image_compare_enabled" (in ($ic.Get "enabled") true) }}
 
 <html lang="{{ site.LanguageCode }}" dir="ltr">
-    <head>
-        <title>{{- .Site.Title }}</title>
-        {{- partial "head.html" . -}}
-    </head>
-    <body>
-        <div>
-            {{- partial "header.html" . -}}
-        </div>
-        <div class="mb-4" id="content">
-            {{- block "main" . }}{{- end }}
-        </div>
-            {{- partial "footer.html" . -}}
 
-        <!-- Lotus Docs JS -->
-        {{ $app := resources.Get "/js/app.js" }}
-        {{- if not hugo.IsServer }}
-            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" | minify | fingerprint "sha384" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-        {{- else }}
-            {{- $js := (slice $app) | resources.Concat "/js/bundle.js" }}
-            <script type="text/javascript" src="{{ $js.Permalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }}></script>
-        {{- end }}
+<head>
+    <title>{{- .Site.Title }}</title>
+    {{- partial "head.html" . -}}
+</head>
 
-        <!-- Dark Mode Switch JS -->
-        {{ if eq .Site.Params.docs.darkMode true -}}
-            {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
-            <script src="{{ $darkModeSwitch.RelPermalink }}" defer></script>
-        {{ end -}}
+<body>
+    <div>
+        {{- partial "header.html" . -}}
+    </div>
+    <div class="mb-4" id="content">
+        {{- block "main" . }}{{- end }}
+    </div>
+    {{- partial "footer.html" . -}}
 
-        <!-- Image Compare Viewer Config -->
-        {{ if ($.Scratch.Get "image_compare_enabled") }}
-        <div id="image-compare-configs" data-configs='[{{ delimit ($ic.Get "config") "," }}]' style="display: none;"></div>
-        <script>
-            (function() {
-                const configEl = document.getElementById("image-compare-configs");
-                if (configEl) {
-                    const configs = JSON.parse(configEl.dataset.configs || "[]");
-                    const viewers = document.querySelectorAll(".image-compare");
-                    viewers.forEach((element, i) => {
-                        new ImageCompare(element, configs[i]).mount();
-                    });
-                }
-            })();
-        </script>
-        {{ end }}
+    <!-- Lotus Docs JS -->
+    {{ $app := resources.Get "/js/app.js" }}
+    {{- if not hugo.IsServer }}
+    {{- $js := (slice $app) | resources.Concat "/js/bundle.js" | minify | fingerprint "sha384" }}
+    <script type="text/javascript" src="{{ $js.Permalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+    {{- else }}
+    {{- $js := (slice $app) | resources.Concat "/js/bundle.js" }}
+    <script type="text/javascript" src="{{ $js.Permalink }}" {{ if hugo.IsProduction
+        }}integrity="{{ $js.Data.Integrity }}" {{ end }}></script>
+    {{- end }}
 
-    </body>
+    <!-- Dark Mode Switch JS -->
+    {{ if eq .Site.Params.docs.darkMode true -}}
+    {{ $darkModeSwitch := resources.Get "/docs/js/darkmode-switch.js" | js.Build | minify }}
+    <script src="{{ $darkModeSwitch.RelPermalink }}" defer></script>
+    {{ end -}}
+
+    <!-- Image Compare Viewer Config -->
+    {{ if ($.Scratch.Get "image_compare_enabled") }}
+    <div id="image-compare-configs" data-configs='[{{ delimit ($ic.Get "config") "," }}]' style="display: none;"></div>
+    <script>
+        (function () {
+            const configEl = document.getElementById("image-compare-configs");
+            if (configEl) {
+                const configs = JSON.parse(configEl.dataset.configs || "[]");
+                const viewers = document.querySelectorAll(".image-compare");
+                viewers.forEach((element, i) => {
+                    new ImageCompare(element, configs[i]).mount();
+                });
+            }
+        })();
+    </script>
+    {{ end }}
+
+</body>
+
 </html>
