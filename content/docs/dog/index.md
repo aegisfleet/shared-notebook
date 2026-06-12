@@ -58,6 +58,15 @@ tags: ["犬"]
     - 骨の悪性腫瘍
     - 腸・肝臓・肺の悪性腫瘍
 
+## 環境
+
+- 監視カメラ
+  - [アルフレッドカメラ](https://alfred.camera/ja)
+    - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
+
+![アプリのイメージ](surveillance-cameras.png)
+![寝てる](surveillance-cameras-2.png)
+
 ## ランニングコスト
 
 ### 任意保険
@@ -68,15 +77,6 @@ tags: ["犬"]
   - 安心プラン: 1,850円/月
 - [ペットほけんフィット](https://www.fpc-pet.co.jp/lp10)
   - 70%補償プラン: 1,580円/月
-
-## 環境
-
-- 監視カメラ
-  - [アルフレッドカメラ](https://alfred.camera/ja)
-    - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
-
-![アプリのイメージ](surveillance-cameras.png)
-![寝てる](surveillance-cameras-2.png)
 
 ### 日用品
 
