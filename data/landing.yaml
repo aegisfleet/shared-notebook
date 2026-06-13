@@ -9,10 +9,10 @@ hero:
       mobile: "gradient-mobile.webp"
   image:
     path: "images"
-    filename: "lotus_docs_screenshot.png"
-    alt: "Shared Notebook Preview"
-    boxShadow: true
-    rounded: true
+    filename: "logo.png"
+    alt: "Shared Notebook Logo"
+    boxShadow: false
+    rounded: false
   title: "📓 Shared Notebook"
   subtitle: "個人の知識・メモ・調査結果をまとめたノートサイト"
   ctaButton:
