@@ -103,7 +103,7 @@
             <li class="{{ if $active }}current{{ end }}">
                 <a class="sidebar-root-link" href="{{ .Permalink }}">
                     {{ if eq .Site.Params.docs.sidebarIcons true -}}
-                    <i class="material-icons me-2">{{ .Params.icon | default "notes" }}</i>
+                    <i class="material-icons me-2">{{ .Params.icon | default "article" }}</i>
                     {{ end }}
                     {{ .Title }}
                 </a>
