@@ -160,3 +160,35 @@ body .toggle-light {
 .hero {
     background: linear-gradient(180deg, #fff7ed 0%, #ffedd5 70%, #ffffff 100%) !important;
 }
+
+// モバイル表示のヘッダー背景色調整
+@media (max-width: 991px) {
+    #topnav {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+
+        // スクロール時、またはモバイルメニュー展開時
+        &.nav-sticky,
+        &:has(.navbar-toggle.open) {
+            background-color: $topnav-bg !important;
+            box-shadow: 0 0 3px rgba(60, 72, 88, 0.15) !important;
+            border-bottom: 1px solid darken($light, 2%) !important;
+        }
+    }
+
+    [data-dark-mode] #topnav {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        border-bottom: none !important;
+
+        // スクロール時、またはモバイルメニュー展開時
+        &.nav-sticky,
+        &:has(.navbar-toggle.open) {
+            background-color: var(--body-bg) !important;
+            box-shadow: 0 0 3px rgba(255, 255, 255, 0.15) !important;
+            border-bottom: 1px solid #292a35 !important;
+        }
+    }
+}
+
