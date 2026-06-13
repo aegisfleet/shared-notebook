@@ -7,6 +7,12 @@ hero:
     filename:
       desktop: "gradient-desktop.webp"
       mobile: "gradient-mobile.webp"
+  image:
+    path: "images"
+    filename: "lotus_docs_screenshot.png"
+    alt: "Shared Notebook Preview"
+    boxShadow: true
+    rounded: true
   title: "📓 Shared Notebook"
   subtitle: "個人の知識・メモ・調査結果をまとめたノートサイト"
   ctaButton:
@@ -15,7 +21,27 @@ hero:
     url: "docs/"
 
 featureGrid:
-  enable: false
+  enable: true
+  weight: 20
+  template: "feature grid"
+  title: "Shared Notebook の主な機能"
+  subtitle: "Hugo と LotusDocs テーマによって構築された、高速でモダンなドキュメント・ノートサイト。"
+  items:
+    - title: "高速な全文検索"
+      icon: "search"
+      description: "FlexSearch を搭載しており、大量のメモや調査ドキュメントの中から必要な情報を瞬時に見つけ出すことが可能。"
+    - title: "ダークテーマ対応"
+      icon: "dark_mode"
+      description: "夜間や長時間の閲覧・執筆作業でも目が疲れにくい、洗練されたダークテーマへの切り替えに対応。"
+    - title: "レスポンシブデザイン"
+      icon: "devices"
+      description: "PC、タブレット、スマートフォンなど、あらゆるデバイスの画面サイズに最適化された閲覧体験を提供。"
+    - title: "Mermaid図表の描画"
+      icon: "schema"
+      description: "フローチャートやシーケンス図などを Markdown テキストで記述し、ページ上で美しく可視化。"
+    - title: "SEO最適化"
+      icon: "trending_up"
+      description: "構造化データ、メタタグ、サイトマップなどが標準対応しており、検索エンジンにインデックスされやすい設計。"
 
 imageCompare:
   enable: false

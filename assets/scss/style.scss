@@ -127,4 +127,31 @@ body .toggle-light {
             color: #b6b9be !important;
         }
     }
+
+    // ヒーロー背景画像のダークモード対応（画像を乗算ブレンドで暗くする）
+    .hero {
+        background-color: rgba(24, 25, 33, 0.85) !important;
+        background-blend-mode: multiply !important;
+    }
+
+    // セクションタイトルのダークモード調整
+    .section-title {
+        .title {
+            color: #ffffff !important;
+        }
+    }
+
+    // フィーチャーカードのダークモード調整
+    .features {
+        .title {
+            color: #ffffff !important;
+        }
+        .para {
+            color: var(--text-muted) !important;
+        }
+        .icon {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            color: var(--primary) !important;
+        }
+    }
 }
