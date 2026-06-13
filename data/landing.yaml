@@ -2,6 +2,11 @@ hero:
   enable: true
   weight: 10
   template: "hero"
+  backgroundImage:
+    path: "images/templates/hero"
+    filename:
+      desktop: "gradient-desktop.webp"
+      mobile: "gradient-mobile.webp"
   title: "📓 Shared Notebook"
   subtitle: "個人の知識・メモ・調査結果をまとめたノートサイト"
   ctaButton:
