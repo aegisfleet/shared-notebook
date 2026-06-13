@@ -29,7 +29,7 @@
     {{ $img1 := $img0 | images.Filter (images.Text $textTitle $textTitleOptions) }}
 
     {{ $img2 := $img1 }}
-    {{ $logo := resources.Get "images/logos/logo.png" }}
+    {{ $logo := resources.Get "favicon-32x32.png" }}
     {{ with $logo }}
         {{ $logo = $logo.Resize "x60" }}
         {{ $img2 = $img1 | images.Filter (images.Overlay $logo 65 110) }}
