@@ -2,11 +2,7 @@ hero:
   enable: true
   weight: 10
   template: "hero"
-  backgroundImage:
-    path: "images/templates/hero"
-    filename:
-      desktop: "gradient-desktop-orange.png"
-      mobile: "gradient-mobile-orange.png"
+
   image:
     path: "images"
     filename: "logo.png"
