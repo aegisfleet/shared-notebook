@@ -1,5 +1,7 @@
 # Shared Notebook
 
+![Logo](static/images/logo.png)
+
 Hugo + PaperMod テーマを使った個人ノート・ドキュメント共有サイト。  
 GitHub Pages に自動デプロイされる。
 
