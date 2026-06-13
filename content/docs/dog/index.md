@@ -1,7 +1,7 @@
 ---
 title: "犬関連"
 date: 2026-06-09
-description: "犬関連"
+description: "ポメラニアンのパムを迎えるための記録です。"
 tags: ["犬"]
 ---
 
