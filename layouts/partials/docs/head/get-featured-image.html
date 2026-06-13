@@ -21,15 +21,18 @@
         "lineSpacing" 10
         "x" 65 "y" 180
         "font" $font
+        "alignx" "left"
+        "aligny" "top"
     }}
 
-    {{ $filters := slice (images.Text $textTitle $textTitleOptions) }}
+    {{ $img0 := $featured }}
+    {{ $img1 := $img0 | images.Filter (images.Text $textTitle $textTitleOptions) }}
 
+    {{ $img2 := $img1 }}
     {{ $logo := resources.Get "images/logos/logo.png" }}
     {{ with $logo }}
         {{ $logo = $logo.Resize "x60" }}
-        {{ $logoFilter := (images.Overlay $logo 65 110) }}
-        {{ $filters = $filters | append $logoFilter }}
+        {{ $img2 = $img1 | images.Filter (images.Overlay $logo 65 110) }}
     {{ end }}
 
     {{ if gt ($title | strings.RuneCount) 23 }}
@@ -41,19 +44,40 @@
     {{ end }}
 
     {{ $description := $.Description }}
+    {{ $hasSecondLine := false }}
+    {{ $line1 := "" }}
+    {{ $line2 := "" }}
+    {{ $y1 := 290 }}
+    {{ $y2 := 360 }}
+
+    {{ $img3 := $img2 }}
     {{ with $description }}
-        {{ $textDesc := $description }}
-        {{ $textDescOptions := dict
-            "color" "#8e8e8e"
-            "size" $sizeDesc
-            "lineSpacing" 10
-            "x" 65 "y" (add 290 $descPadding)
-            "font" $font
-        }}
-        {{ $descFilter := (images.Text $textDesc $textDescOptions) }}
-        {{ $filters = $filters | append $descFilter }}
+        {{ $descRunes := $description | strings.RuneCount }}
+        {{ $lineLength := 20 }}
+        {{ $maxRunes := 38 }}
+        
+        {{ if gt $descRunes $lineLength }}
+            {{ $hasSecondLine = true }}
+            {{ $displayDesc := $description }}
+            {{ if gt $descRunes $maxRunes }}
+                {{ $displayDesc = print (slicestr $description 0 $maxRunes) "..." }}
+            {{ end }}
+            {{ $line1 = slicestr $displayDesc 0 $lineLength }}
+            {{ $line2 = slicestr $displayDesc $lineLength }}
+            {{ $y1 = int (add 290 $descPadding) }}
+            {{ $y2 = int (add $y1 60) }}
+            {{ $img3 = $img2 | images.Filter (images.Text $line1 (dict "color" "#8e8e8e" "size" $sizeDesc "lineSpacing" 10 "x" 65 "y" $y1 "font" $font "alignx" "left" "aligny" "top")) }}
+        {{ else }}
+            {{ $img3 = $img2 | images.Filter (images.Text $description (dict "color" "#8e8e8e" "size" $sizeDesc "lineSpacing" 10 "x" 65 "y" (add 290 $descPadding) "font" $font "alignx" "left" "aligny" "top")) }}
+        {{ end }}
     {{ end }}
 
+    {{ $img4 := $img3 }}
+    {{ if $hasSecondLine }}
+        {{ $img4 = $img3 | images.Filter (images.Text $line2 (dict "color" "#8e8e8e" "size" 20 "lineSpacing" 10 "x" 65 "y" $y2 "font" $font "alignx" "left" "aligny" "top")) }}
+    {{ end }}
+
+    {{ $img5 := $img4 }}
     {{ $textSiteTitle := $.Site.Title }}
     {{ with $textSiteTitle }}
         {{ $textSiteTitleOptions := dict
@@ -62,12 +86,13 @@
             "lineSpacing" 10
             "x" 65 "y" 550
             "font" $font
+            "alignx" "left"
+            "aligny" "top"
         }}
-        {{ $siteTitleFilter := (images.Text $textSiteTitle $textSiteTitleOptions)}}
-        {{ $filters = $filters | append $siteTitleFilter }}
+        {{ $img5 = $img4 | images.Filter (images.Text $textSiteTitle $textSiteTitleOptions) }}
     {{ end }}
 
-    {{ $featured = $featured | images.Filter $filters }}
+    {{ $featured = $img5 }}
 {{ end }}
 
 {{ return $featured }}
