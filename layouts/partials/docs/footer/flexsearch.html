@@ -126,10 +126,10 @@
     (function(){
 
     // {{ $cjk := eq .Site.Language.Lang "ja" }}
-    var isCJK = parseInt("{{ if $cjk }}1{{ else }}0{{ end }}") === 1;
+    var isCJK = Number.parseInt("{{ if $cjk }}1{{ else }}0{{ end }}") === 1;
     var indexConfig = {
-        minlength: parseInt("{{ .Site.Params.flexsearch.minQueryChar | default 0}}"),
-        cache: parseInt("{{ .Site.Params.flexsearch.cache | default 100 }}"),
+        minlength: Number.parseInt("{{ .Site.Params.flexsearch.minQueryChar | default 0}}"),
+        cache: Number.parseInt("{{ .Site.Params.flexsearch.cache | default 100 }}"),
         optimize: "{{ .Site.Params.flexsearch.optimize | default true }}" === "true",
         document: {
             id: 'id',
@@ -163,8 +163,8 @@
     search.addEventListener('input', show_results, true);
 
     function show_results(){
-        const maxResult = parseInt("{{ .Site.Params.flexsearch.maxResult | default 5}}");
-        const minlength = parseInt("{{ .Site.Params.flexsearch.minQueryChar | default 0}}");
+        const maxResult = Number.parseInt("{{ .Site.Params.flexsearch.maxResult | default 5}}");
+        const minlength = Number.parseInt("{{ .Site.Params.flexsearch.minQueryChar | default 0}}");
         var searchQuery = this.value;
         var results = index.search(searchQuery, {limit: maxResult, enrich: true});
 
