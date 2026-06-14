@@ -1,0 +1,95 @@
+/* Custom Mermaid Overrides for Dark Mode */
+
+.docs-content .main-content pre {
+
+    &.mermaid {
+        background-color: transparent !important;
+        text-align: center !important;
+        .messageText {
+            fill: var(--text-default) !important;
+        }
+        .messageLine0,
+        .messageLine1 {
+            stroke: var(--text-default) !important;
+        }
+        #arrowhead path,
+        #crosshead path {
+            fill: var(--text-default) !important;
+            stroke: var(--text-default) !important;
+        }
+        .edgePaths path {
+            stroke: var(--text-default) !important;
+        }
+        .marker {
+            fill: var(--text-default) !important;
+            stroke: var(--text-default) !important;
+        }
+        .grid .tick {
+            stroke: var(--text-default) !important;
+
+            text {
+                fill: var(--text-default) !important;
+            }
+        }
+        line {
+            stroke: var(--text-default) !important;
+        }
+        text {
+            fill: var(--text-default) !important;
+        }
+        #sequencenumber circle {
+            fill: var(--bg-mermaid) !important;
+            stroke: var(--text-default) !important;
+        }
+        .sequenceNumber {
+            fill: var(--text-default) !important;
+        }
+
+        // Dark mode styles
+        [data-dark-mode] & {
+            background-color: #1d1f27 !important; // Darken the background
+            border: 1px solid #2d3139;
+            padding: 1.25rem;
+            border-radius: 0.25rem;
+
+            // Make text white/light gray
+            text, span, div, p {
+                color: #dee2e6 !important;
+                fill: #dee2e6 !important;
+            }
+
+            // Darken node backgrounds and adjust borders
+            .node rect,
+            .node circle,
+            .node polygon,
+            .node path,
+            .node .label-container {
+                fill: #2d3139 !important;
+                stroke: #4b5263 !important;
+            }
+
+            // Subgraph/Cluster background
+            .cluster rect {
+                fill: #1c1e24 !important;
+                stroke: #2d3139 !important;
+            }
+
+            // Edge label background
+            .edgeLabel rect {
+                fill: #1d1f27 !important;
+            }
+
+            // Edge lines and markers
+            .edgePaths .edgePath .path {
+                stroke: #adbac7 !important;
+            }
+            .marker {
+                fill: #adbac7 !important;
+                stroke: #adbac7 !important;
+            }
+            .arrowheadPath {
+                fill: #adbac7 !important;
+            }
+        }
+    }
+}
