@@ -15,6 +15,10 @@ $font-family-monospace:  "Fira Code", SFMono-Regular, Menlo, Monaco, Consolas, "
 @import "bootstrap/functions";
 @import "bootstrap/variables";
 @import "variables";
+$primary: $orange;
+$theme-colors: map-merge($theme-colors, (
+  "primary": $primary
+));
 @import "bootstrap/mixins";
 @import "bootstrap/bootstrap";
 

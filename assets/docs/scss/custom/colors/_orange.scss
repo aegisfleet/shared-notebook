@@ -1,0 +1,42 @@
+// orange theme color definition
+:root {
+    // color-variables (HSL)
+    --orange-900-hsl: 15, 76%, 27%;
+    --orange-800-hsl: 15, 75%, 36%;
+    --orange-700-hsl: 16, 85%, 41%;
+    --orange-600-hsl: 20, 90%, 48%;
+    --orange-500-hsl: 25, 95%, 53%;
+    --orange-400-hsl: 31, 93%, 61%;
+    --orange-300-hsl: 33, 93%, 73%;
+    --orange-200-hsl: 32, 97%, 85%;
+    --orange-100-hsl: 29, 100%, 92%;
+    --orange-50-hsl: 30, 100%, 97%;
+
+    --orange-900: hsl(var(--orange-900-hsl));
+    --orange-800: hsl(var(--orange-800-hsl));
+    --orange-700: hsl(var(--orange-700-hsl));
+    --orange-600: hsl(var(--orange-600-hsl));
+    --orange-500: hsl(var(--orange-500-hsl));
+    --orange-400: hsl(var(--orange-400-hsl));
+    --orange-300: hsl(var(--orange-300-hsl));
+    --orange-200: hsl(var(--orange-200-hsl));
+    --orange-100: hsl(var(--orange-100-hsl));
+    --orange-50: hsl(var(--orange-50-hsl));
+
+    --orange: var(--orange-500);
+
+    --primary: var(--orange);
+    --primary-50: var(--orange-50);
+    --primary-100: var(--orange-100);
+    --primary-200: var(--orange-200);
+    --primary-300: var(--orange-300);
+    --primary-400: var(--orange-400);
+    --primary-800: var(--orange-800);
+
+    --primary-hsl: var(--orange-500-hsl);
+    --primary-50-hsl: var(--orange-50-hsl);
+    --primary-100-hsl: var(--orange-100-hsl);
+    --primary-200-hsl: var(--orange-200-hsl);
+    --primary-300-hsl: var(--orange-300-hsl);
+    --primary-800-hsl: var(--orange-800-hsl);
+}

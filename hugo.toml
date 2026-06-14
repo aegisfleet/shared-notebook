@@ -42,7 +42,7 @@ title = "Shared Notebook"
   [params.docs]
     title = "Shared Notebook"
     pathName = "docs"
-    themeColor = "blue"
+    themeColor = "orange"
     darkMode = true
     prism = true
     prismTheme = "lotusdocs"
