@@ -185,15 +185,15 @@
             minCharMessage.classList.add("suggestion__no-results");
             suggestions.appendChild(minCharMessage);
             return;
-        } else {
-            // inform user that no results were found
-            if (flatResults.size === 0 && searchQuery) {
-                const noResultsMessage = document.createElement('div')
-                noResultsMessage.innerHTML = '{{ i18n "search_no_results" | default "No results for" }}' + ` "<strong>${escapeHTML(searchQuery)}</strong>"`;
-                noResultsMessage.classList.add("suggestion__no-results");
-                suggestions.appendChild(noResultsMessage);
-                return;
-            }
+        }
+
+        // inform user that no results were found
+        if (flatResults.size === 0 && searchQuery) {
+            const noResultsMessage = document.createElement('div')
+            noResultsMessage.innerHTML = '{{ i18n "search_no_results" | default "No results for" }}' + ` "<strong>${escapeHTML(searchQuery)}</strong>"`;
+            noResultsMessage.classList.add("suggestion__no-results");
+            suggestions.appendChild(noResultsMessage);
+            return;
         }
 
         // construct a list of suggestions
