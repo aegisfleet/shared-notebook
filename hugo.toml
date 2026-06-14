@@ -1,5 +1,6 @@
 baseURL = "https://aegisfleet.github.io/shared-notebook/"
 locale = "ja"
+defaultContentLanguage = "ja"
 title = "Shared Notebook"
 
 [module]

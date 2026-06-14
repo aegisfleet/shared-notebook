@@ -26,7 +26,7 @@
 {{ end }}
 
 <script id="search-data" type="application/json">
-{{ $searchData | jsonify }}
+{{ $searchData | jsonify | safeJS }}
 </script>
 
 <script type="module">
