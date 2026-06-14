@@ -143,10 +143,9 @@
         };
 
         if (isCJK) {
-            indexConfig.encode = false;
-            indexConfig.tokenize = function (str) {
+            indexConfig.encode = function (str) {
                 return str.replace(/([\u4e00-\u9fa5\u3040-\u309f\u30a0-\u30ff\uff00-\uffef\u3000-\u303f])/g, " $1 ")
-                    .split(/\s+/);
+                    .split(/\s+/).filter(Boolean);
             };
         } else {
             indexConfig.tokenize = '{{ .Site.Params.flexsearch.tokenize | default "forward" }}';
