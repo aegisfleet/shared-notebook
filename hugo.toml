@@ -38,7 +38,7 @@ title = "Shared Notebook"
 
   # ソーシャル
   [params.social]
-    github = "aegisfleet"
+    github = "aegisfleet/shared-notebook"
 
   [params.docs]
     title = "Shared Notebook"
@@ -53,6 +53,8 @@ title = "Shared Notebook"
     navDesc = true
     sidebarIcons = true
     titleIcon = true
+    repoURL = "https://github.com/aegisfleet/shared-notebook"
+    repoBranch = "main"
 
   [params.flexsearch]
     enabled = true
