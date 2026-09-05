@@ -43,6 +43,7 @@ tags: ["AI", "開発環境", "エージェント"]
 - 画像生成
   - Gemini Nano Banana ![Premium](https://img.shields.io/badge/-Premium-purple)
   - ChatGPT Images ![Free](https://img.shields.io/badge/-Free-blue)
-  - Whisk ![Free](https://img.shields.io/badge/-Free-blue)
 - 動画生成
-  - Google Veo ![Premium](https://img.shields.io/badge/-Premium-purple)
+  - Google Omni ![Premium](https://img.shields.io/badge/-Premium-purple)
+- 音楽生成
+  - Google Lyria ![Premium](https://img.shields.io/badge/-Premium-purple)
