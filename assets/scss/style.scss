@@ -196,3 +196,12 @@ body .toggle-light {
     }
 }
 
+// Material Icons のフォント読み込み前（合字テキスト表示時）のちらつき・横広がり防止
+.material-icons {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
