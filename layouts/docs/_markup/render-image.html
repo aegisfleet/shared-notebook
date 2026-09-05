@@ -21,10 +21,14 @@
       {{ if eq .MediaType.SubType "svg" }}
         {{ .Content | safeHTML }}
       {{ else }}
-        <img src="{{ .RelPermalink | safeURL }}" alt="{{ $text }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+        <a href="{{ .RelPermalink | safeURL }}" target="_blank" rel="noopener noreferrer">
+          <img src="{{ .RelPermalink | safeURL }}" alt="{{ $text }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+        </a>
       {{ end }}
     {{ else }}
-      <img src="{{ .Destination | safeURL }}" alt="{{ $text }}" loading="lazy">
+      <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ .Destination | safeURL }}" alt="{{ $text }}" loading="lazy">
+      </a>
     {{ end }}
     <figcaption>{{ .Title | markdownify }}</figcaption>
   </figure>
@@ -33,9 +37,13 @@
     {{ if eq .MediaType.SubType "svg" }}
       {{ .Content | safeHTML }}
     {{ else }}
-      <img src="{{ .RelPermalink | safeURL }}" alt="{{ $text }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+      <a href="{{ .RelPermalink | safeURL }}" target="_blank" rel="noopener noreferrer">
+        <img src="{{ .RelPermalink | safeURL }}" alt="{{ $text }}" width="{{ .Width }}" height="{{ .Height }}" loading="lazy">
+      </a>
     {{ end }}
   {{ else }}
-    <img src="{{ .Destination | safeURL }}" alt="{{ $text }}" loading="lazy">
+    <a href="{{ .Destination | safeURL }}" target="_blank" rel="noopener noreferrer">
+      <img src="{{ .Destination | safeURL }}" alt="{{ $text }}" loading="lazy">
+    </a>
   {{ end }}
 {{ end }}

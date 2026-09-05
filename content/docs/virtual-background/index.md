@@ -7,7 +7,7 @@ tags: ["背景", "画像", "リモートワーク"]
 
 ビデオ会議（Zoom、Microsoft Teams、Google Meet など）で利用できるバーチャル背景画像集。
 
-画像を右クリック（または長押し）して保存するか、画像ファイルリンクからオリジナル解像度を開いてダウンロード可能。
+画像をクリックすると別タブでオリジナル解像度が表示される。右クリックや長押しで保存して利用可能。
 
 ## 背景画像一覧
 
@@ -19,8 +19,6 @@ tags: ["背景", "画像", "リモートワーク"]
 
 ![レンガ壁と観葉植物のロフトリビング](Loft_living_room_interior_design_202608182053.jpeg)
 
-- **画像ファイル**: [Loft_living_room_interior_design_202608182053.jpeg](Loft_living_room_interior_design_202608182053.jpeg)
-
 ---
 
 ### 2. 重厚な書斎とレザーウィングバックチェア
@@ -30,8 +28,6 @@ tags: ["背景", "画像", "リモートワーク"]
 - **特徴**: クラシック本棚、アンティーク調、ブラウン本革チェア
 
 ![重厚な書斎とレザーウィングバックチェア](Leather_wingback_chair_in_library_202608182106.jpeg)
-
-- **画像ファイル**: [Leather_wingback_chair_in_library_202608182106.jpeg](Leather_wingback_chair_in_library_202608182106.jpeg)
 
 ---
 
@@ -43,8 +39,6 @@ tags: ["背景", "画像", "リモートワーク"]
 
 ![夜景を望むペントハウス・エグゼクティブオフィス](Executive_chair_in_penthouse_2K_202608182107.jpeg)
 
-- **画像ファイル**: [Executive_chair_in_penthouse_2K_202608182107.jpeg](Executive_chair_in_penthouse_2K_202608182107.jpeg)
-
 ---
 
 ### 4. 開放的なロフトスペースとモダンラウンジチェア
@@ -55,11 +49,9 @@ tags: ["背景", "画像", "リモートワーク"]
 
 ![開放的なロフトスペースとモダンラウンジチェア](Armchair_in_loft_space_2K_202608182107.jpeg)
 
-- **画像ファイル**: [Armchair_in_loft_space_2K_202608182107.jpeg](Armchair_in_loft_space_2K_202608182107.jpeg)
-
 ---
 
 ## 設定方法
 
-1. 各画像の下にあるファイル名リンクをクリック、または画像を右クリックして「名前を付けて画像を保存」を選択。
+1. 画像をクリックして別タブで開き、右クリック（または長押し）して「名前を付けて画像を保存」を選択。
 2. ご利用のビデオ会議ツール（Zoom / Microsoft Teams / Google Meet 等）の設定画面から背景画像として追加して適用する。
