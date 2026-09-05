@@ -26,6 +26,10 @@ tags: ["AI", "開発環境", "エージェント"]
 
       ![Google Jules](jules.png)
 
+    - Gemini Spark ![Premium](https://img.shields.io/badge/-Premium-purple)
+
+      ![Gemini Spark](gemini-spark.png)
+
     - OpenAI Codex ![Free](https://img.shields.io/badge/-Free-blue)
   - コード保全
     - CodeRabbit ![Free](https://img.shields.io/badge/-Free-blue)
