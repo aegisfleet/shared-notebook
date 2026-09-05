@@ -14,7 +14,7 @@ mermaid: true
 
 自分一人では思いつかなかった視点からどのような改善提案がなされ、それをどのように実際の改善サイクルへ落とし込んだのか、AI駆動のUI/UX改善運用イメージをまとめる。
 
-![AIによるWebサイトUI/UX監査とGitHub Issue起票のインフォグラフィック](uiux-audit-diagram.jpg)
+![AIと連携するWebサイトUI/UX改善ワークフロー](uiux-workflow-ja.jpg)
 
 ---
 
