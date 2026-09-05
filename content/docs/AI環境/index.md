@@ -9,9 +9,9 @@ tags: ["AI", "開発環境", "エージェント"]
 
 - 開発
   - IDE
-    - VS Code - GitHub Copilot (GPT-5.3-Codex) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
+    - VS Code - GitHub Copilot (Gemini 4.8 Flash) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
   - 自律型AIエージェント
-    - GitHub Copilot Coding Agent (Claude Sonnet 4.6) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
+    - GitHub Copilot Coding Agent (Claude Sonnet 5) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
 - 情報収集
   - 技術調査
     - Google NotebookLM ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
@@ -20,16 +20,19 @@ tags: ["AI", "開発環境", "エージェント"]
 
 - 開発
   - IDE
-    - Antigravity (Gemini 3 Flash) ![Premium](https://img.shields.io/badge/-Premium-purple)
+    - Antigravity (Gemini 4.8 Flash) ![Premium](https://img.shields.io/badge/-Premium-purple)
   - 自律型AIエージェント
     - Google Jules (Gemini 3.1 Pro) ![Premium](https://img.shields.io/badge/-Premium-purple)
+
+      ![Google Jules](jules.png)
+
     - OpenAI Codex ![Free](https://img.shields.io/badge/-Free-blue)
   - コード保全
     - CodeRabbit ![Free](https://img.shields.io/badge/-Free-blue)
     - SonarQube ![Free](https://img.shields.io/badge/-Free-blue)
 - 情報収集
   - 技術調査
-    - Gemini DeepResearch (Gemini 3.1 Pro) ![Premium](https://img.shields.io/badge/-Premium-purple)
+    - Gemini DeepResearch ![Premium](https://img.shields.io/badge/-Premium-purple)
     - Google NotebookLM ![Premium](https://img.shields.io/badge/-Premium-purple)
   - SNS検索
     - SpaceXAI Grok ![Free](https://img.shields.io/badge/-Free-blue)
