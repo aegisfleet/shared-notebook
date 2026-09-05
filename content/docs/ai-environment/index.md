@@ -21,6 +21,9 @@ tags: ["AI", "開発環境", "エージェント"]
 - 開発
   - IDE
     - Antigravity (Gemini 4.8 Flash) ![Premium](https://img.shields.io/badge/-Premium-purple)
+
+      ![Antigravity](antigravity.png)
+
   - 自律型AIエージェント
     - Google Jules (Gemini 3.1 Pro) ![Premium](https://img.shields.io/badge/-Premium-purple)
 
