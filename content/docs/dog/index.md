@@ -16,6 +16,17 @@ tags: ["犬"]
  
 <img src="pamu.jpg" alt="パム" style="width: 50%;"><img src="shop-pop.jpg" alt="お店のポップ" style="width: 50%;">
 
+### 2026年6月（生後3か月ごろ）
+
+<img src="3month.jpg" alt="3か月ごろ" style="width: 50%;"><img src="3month_2.jpg" alt="3か月ごろ" style="width: 50%;">
+
+### 2026年7月（生後4か月ごろ）
+
+<img src="4month.jpg" alt="4か月ごろ" style="width: 50%;"><img src="4month_2.jpg" alt="4か月ごろ" style="width: 50%;">
+
+### 2026年8月（生後5か月ごろ）
+
+<img src="5month.jpg" alt="5か月ごろ" style="width: 50%;"><img src="5month_2.jpg" alt="5か月ごろ" style="width: 50%;">
 ## 初期費用
 
 - 約50万円
