@@ -14,16 +14,13 @@ tags: ["犬"]
 | 性別 | メス |
 | 誕生日 | 2026年3月23日 |
  
-
-![パム](pamu.jpg)
-![お店のポップ](shop-pop.jpg)
+<img src="pamu.jpg" alt="パム" style="width: 50%;"><img src="shop-pop.jpg" alt="お店のポップ" style="width: 50%;">
 
 ## 初期費用
 
 - 約50万円
 
-![PayPay](paypay.png)
-![初期費用](initial_cost.jpg)
+<img src="paypay.png" alt="PayPay" style="width: 50%;"><img src="initial_cost.jpg" alt="初期費用" style="width: 50%;">
 
 ### 関連費用
 
@@ -64,8 +61,7 @@ tags: ["犬"]
   - [アルフレッドカメラ](https://alfred.camera/ja)
     - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
 
-![アプリのイメージ](surveillance-cameras.png)
-![寝てる](surveillance-cameras-2.png)
+<img src="surveillance-cameras.png" alt="アプリのイメージ" style="width: 50%;"><img src="surveillance-cameras-2.png" alt="寝てる" style="width: 50%;">
 
 ## ランニングコスト
 
