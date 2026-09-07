@@ -80,7 +80,9 @@ tags: ["犬"]
 
 - [Tapo C113](https://www.amazon-hikaku.com/b0fnmn6zvr/)
 
-<img src="tapo_c113_day.jpeg" alt="昼間" style="width: 50%;"><img src="tapo_c113_night.jpeg" alt="夜中" style="width: 50%;">
+<img src="tapo_c113_day.jpeg" alt="昼間" style="width: 100%;">
+<img src="tapo_c113_night.jpeg" alt="夜中" style="width: 100%;">
+<video src="tapo_c113_rolling.mp4" controls playsinline style="width: 100%;"></video>
 
 ## ランニングコスト
 
@@ -106,7 +108,5 @@ tags: ["犬"]
 - [おもちゃ](https://www.amazon-hikaku.com/categories/%E7%8A%AC%E7%94%A8%E3%83%AD%E3%83%BC%E3%83%97%E3%81%AE%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83/)
   - [コング](https://www.amazon-hikaku.com/b00zzaf53w/)はマジで良い！
 
-<div style="display: flex; align-items: center;">
-  <img src="kong.jpg" alt="コング" style="width: 50%;">
-  <video src="kong.mp4" controls playsinline style="width: 50%;"></video>
-</div>
+<img src="kong.jpg" alt="コング" style="width: 100%;">
+<video src="kong.mp4" controls playsinline style="width: 100%;"></video>
