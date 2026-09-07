@@ -57,11 +57,16 @@ tags: ["犬"]
 
 ## 環境
 
-- 監視カメラ
-  - [アルフレッドカメラ](https://alfred.camera/ja)
-    - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
+### 監視カメラ
+
+- [アルフレッドカメラ](https://alfred.camera/ja)
+  - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
 
 <img src="surveillance-cameras.png" alt="アプリのイメージ" style="width: 50%;"><img src="surveillance-cameras-2.png" alt="寝てる" style="width: 50%;">
+
+- [Tapo C113](https://www.amazon-hikaku.com/b0fnmn6zvr/)
+
+<img src="tapo_c113_day.jpeg" alt="昼間" style="width: 50%;"><img src="tapo_c113_night.jpeg" alt="夜中" style="width: 50%;">
 
 ## ランニングコスト
 
