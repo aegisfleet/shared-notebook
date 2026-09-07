@@ -86,4 +86,7 @@ tags: ["犬"]
 - [おもちゃ](https://www.amazon-hikaku.com/categories/%E7%8A%AC%E7%94%A8%E3%83%AD%E3%83%BC%E3%83%97%E3%81%AE%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83/)
   - [コング](https://www.amazon-hikaku.com/b00zzaf53w/)はマジで良い！
 
-<img src="kong.jpg" alt="コング" style="width: 50%;"><video src="kong.mp4" controls playsinline style="width: 50%;"></video>
+<div style="display: flex; gap: 8px; align-items: center;">
+  <img src="kong.jpg" alt="コング" style="width: 50%;">
+  <video src="kong.mp4" controls playsinline style="width: 50%;"></video>
+</div>
