@@ -21,6 +21,12 @@ tags: ["開発環境", "個人開発", "ツール", "AI"]
 
   ![Gemini Spark](gemini-spark.png)
 
+## アクセス解析
+
+- [Google アナリティクス](https://analytics.google.com/)
+
+  ![Google アナリティクス](google-analytics.png)
+
 ## コードの品質担保
 
 - [Biome](https://biomejs.dev/)
