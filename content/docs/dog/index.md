@@ -77,7 +77,13 @@ tags: ["犬"]
 ### 日用品
 
 - [ドッグフード](https://www.amazon-hikaku.com/categories/%E3%83%89%E3%83%A9%E3%82%A4%E3%83%89%E3%83%83%E3%82%B0%E3%83%95%E3%83%BC%E3%83%89/)
+  - 大容量は酸化のリスクが高い…。2kg以下の方が良さそう。
 - [ペットシーツ](https://www.amazon-hikaku.com/categories/%E7%8A%AC%E7%94%A8%E3%83%88%E3%82%A4%E3%83%AC%E3%82%B7%E3%83%BC%E3%83%88/)
+  - アイリスオーヤマのやつが良かった。
 - [除菌・消臭](https://www.amazon-hikaku.com/categories/%E9%99%A4%E8%8F%8C%E5%89%A4/)
   - 店員さんおすすめ: [ビューティーエコ パルジェット](https://www.amazon-hikaku.com/b0056laqv6/)
 - [スリッカーブラシ](https://www.amazon-hikaku.com/categories/%E7%8A%AC%E7%94%A8%E3%83%96%E3%83%A9%E3%82%B7/)
+- [おもちゃ](https://www.amazon-hikaku.com/categories/%E7%8A%AC%E7%94%A8%E3%83%AD%E3%83%BC%E3%83%97%E3%81%AE%E3%81%8A%E3%82%82%E3%81%A1%E3%82%83/)
+  - [コング](https://www.amazon-hikaku.com/b00zzaf53w/)はマジで良い！
+
+<img src="kong.jpg" alt="コング" style="width: 50%;">
