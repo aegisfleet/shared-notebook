@@ -21,6 +21,12 @@ tags: ["開発環境", "個人開発", "ツール", "AI"]
 
   ![Gemini Spark](gemini-spark.png)
 
+## AIプラットフォーム
+
+- [Google AI Studio](https://aistudio.google.com/)
+
+  ![Google AI Studio](google-ai-studio.png)
+
 ## アクセス解析
 
 - [Google アナリティクス](https://analytics.google.com/)
