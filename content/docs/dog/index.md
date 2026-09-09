@@ -69,6 +69,10 @@ tags: ["犬"]
 
 <img src="5month.jpg" alt="5か月ごろ" style="width: 50%;"><img src="5month_2.jpg" alt="5か月ごろ" style="width: 50%;">
 
+### 2026年9月（いまここ）
+
+<img src="6month.jpg" alt="6か月ごろ" style="width: 50%;"><img src="6month_2.jpg" alt="6か月ごろ" style="width: 50%;">
+
 ## 環境
 
 ### 監視カメラ
@@ -80,9 +84,10 @@ tags: ["犬"]
 
 - [Tapo C113](https://www.amazon-hikaku.com/b0fnmn6zvr/)
 
+<video src="tapo_c113_rolling.mp4" controls playsinline style="width: 100%;"></video>
 <img src="tapo_c113_day.jpeg" alt="昼間" style="width: 100%;">
 <img src="tapo_c113_night.jpeg" alt="夜中" style="width: 100%;">
-<video src="tapo_c113_rolling.mp4" controls playsinline style="width: 100%;"></video>
+<img src="tapo_c113_night_2.jpeg" alt="夜中2" style="width: 100%;">
 
 ## ランニングコスト
 
