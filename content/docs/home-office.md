@@ -24,7 +24,7 @@ tags: ["ガジェット", "在宅環境", "デバイス", "書斎"]
 
 ## トラックボール
 
-- M-DPT1MRXBK(ELECOM)
+- [M-DPT1MRXBK(ELECOM)](https://www.amazon-hikaku.com/b07c9t4ttw/)
 
 ## マウス
 
@@ -37,11 +37,11 @@ tags: ["ガジェット", "在宅環境", "デバイス", "書斎"]
 
 ## マイク
 
-- AT2040(Audio-Technica)
+- [AT2040(Audio-Technica)](https://www.amazon-hikaku.com/b09bfpnw2j/)
 
 ## オーディオインターフェース
 
-- AT-UMX3(Audio-Technica)
+- [AT-UMX3(Audio-Technica)](https://www.amazon-hikaku.com/b0dzccph3v/)
 
 ## イヤホン
 
@@ -57,5 +57,5 @@ tags: ["ガジェット", "在宅環境", "デバイス", "書斎"]
 
 ## 左手デバイス
 
-- Stream Deck MK.2 White(Elgato)
+- [Stream Deck MK.2 White(Elgato)](https://www.amazon-hikaku.com/b0cdwswlwv/)
 - Tartarus Pro Mercury White(Razer)
