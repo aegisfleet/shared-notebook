@@ -1,0 +1,23 @@
+:root {
+  --primary-hue: 25deg;
+  --primary-saturation: 95%;
+  --primary-lightness: 50%;
+
+  --pagefind-ui-primary: #ea580c;
+  --pagefind-ui-text: #1f2937;
+  --pagefind-ui-background: #ffffff;
+  --pagefind-ui-border: #e5e7eb;
+  --pagefind-ui-tag: #f3f4f6;
+}
+
+html[class~="dark"] {
+  --primary-hue: 25deg;
+  --primary-saturation: 95%;
+  --primary-lightness: 55%;
+
+  --pagefind-ui-primary: #f97316;
+  --pagefind-ui-text: #f3f4f6;
+  --pagefind-ui-background: #18181b;
+  --pagefind-ui-border: #27272a;
+  --pagefind-ui-tag: #27272a;
+}

@@ -3,6 +3,9 @@
 /resources/_gen/
 .hugo_build.lock
 
+# Pagefind 生成成果物（ローカル用）
+/static/pagefind/
+
 # Hugo のキャッシュ
 hugo_cache/
 
