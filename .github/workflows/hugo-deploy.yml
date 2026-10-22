@@ -70,7 +70,7 @@ jobs:
           npx -y pagefind --site public
 
       - name: ビルド成果物のアップロード
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: ./public
 
