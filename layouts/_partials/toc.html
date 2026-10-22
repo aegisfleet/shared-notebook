@@ -16,9 +16,7 @@
       {{- with $headings -}}
         <p class="hx:mb-4 hx:font-semibold hx:tracking-tight">{{ $onThisPage }}</p>
         {{- range . -}}
-          <ul>
-            {{- with .Headings -}}{{ template "toc-subheading" (dict "headings" . "level" 0) }}{{- end -}}
-          </ul>
+          {{- with .Headings -}}{{ template "toc-subheading" (dict "headings" . "level" 0) }}{{- end -}}
         {{- end -}}
       {{- end -}}
 
@@ -79,17 +77,18 @@
   {{- $padding := (mul $level 4) -}}
   {{- $class := cond (eq $level 0) "hx:font-medium" (printf "hx:ltr:pl-%d hx:rtl:pr-%d" $padding $padding) -}}
 
+<ul>
   {{- range $headings }}
     {{- if .Title }}
       <li class="hx:my-2 hx:scroll-my-6 hx:scroll-py-6">
         <a class="{{ $class }} hx:inline-block hx:rounded-sm hx:text-gray-500 hx:hover:text-gray-900 hx:dark:text-gray-400 hx:dark:hover:text-gray-300 hx:contrast-more:text-gray-900 hx:contrast-more:underline hx:contrast-more:dark:text-gray-50 hx:w-full hx:wrap-break-word hx:hextra-focus-visible-inset" href="#{{ anchorize .ID }}">
           {{- .Title | safeHTML | plainify | htmlUnescape }}
         </a>
+        {{- with .Headings -}}
+          {{ template "toc-subheading" (dict "headings" . "level" (add $level 1)) }}
+        {{- end -}}
       </li>
     {{- end -}}
-    {{- with .Headings -}}
-      {{ template "toc-subheading" (dict "headings" . "level" (add $level 1)) }}
-    {{- end -}}
-
   {{- end -}}
+</ul>
 {{- end -}}

@@ -41,7 +41,7 @@
 
   /**
    * URLパーツからパンくずテキストと配列を構築する。
-   * @returns {{ crumb: string, crumbParts: string[] }}
+   * @returns {Object} crumb（パンくず文字列）と crumbParts（配列）を含むオブジェクト
    */
   function buildBreadcrumb(urlParts, data, route) {
     let crumb = '';
