@@ -2,15 +2,17 @@
 
 ![Logo](static/images/logo.png)
 
-Hugo + PaperMod テーマを使った個人ノート・ドキュメント共有サイト。  
+Hugo + Hextra テーマを使った個人ノート・ドキュメント共有サイト。  
 GitHub Pages に自動デプロイされる。
 
 ## 特徴
 
-- 🌙 ダーク / ライトテーマ切り替え
-- 📊 Mermaid ダイアグラム対応
-- 🔍 全文検索（Fuse.js）
-- 🏷️ タグ分類
+- 🌙 ダーク / ライトテーマ切り替え（目に優しいソフトダークグレー配色）
+- 🔍 高速全文検索（FlexSearch モーダル検索 & Pagefind 全文検索）
+- 🖼️ 画像クリック拡大（Medium Zoom）
+- 📊 Mermaid ダイアグラム標準対応
+- 🏷️ タグ分類・カテゴリポータル
+- 📱 レスポンシブ & Nextra 風モダン 3 カラムレイアウト
 
 ## ローカル開発
 
@@ -19,28 +21,22 @@ GitHub Pages に自動デプロイされる。
 hugo server -D
 
 # ブラウザで確認
-# http://localhost:1313/
+# http://localhost:1313/shared-notebook/
 ```
 
 ## コンテンツの追加
 
-`content/docs/` 以下に Markdown ファイルを作成する。  
-Mermaid ダイアグラムを含む場合はフロントマターに `mermaid: true` を追加する。
+`content/docs/` 以下に Markdown ファイル、またはディレクトリを作成する（Page Bundles に対応）。
 
 ```markdown
 ---
 title: "ドキュメントタイトル"
 date: 2026-06-09
+description: "ドキュメントの概要"
 tags: ["タグ1", "タグ2"]
-mermaid: true  # Mermaid ダイアグラムを含む場合に追加
 ---
 ```
 
 ## デプロイ
 
-`main` ブランチに push すると GitHub Actions が自動でビルド・デプロイを実行する。
-
-### GitHub リポジトリの初回設定
-
-1. GitHub リポジトリの **Settings > Pages** を開く
-2. **Source** を `GitHub Actions` に変更する
+`main` ブランチに push すると GitHub Actions が自動でビルド・Pagefind インデックス生成・GitHub Pages へのデプロイを実行する。
