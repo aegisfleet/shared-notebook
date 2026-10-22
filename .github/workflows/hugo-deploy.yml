@@ -33,7 +33,7 @@ jobs:
       NODE_VERSION: "20"
     steps:
       - name: リポジトリのチェックアウト
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0 # 全履歴を取得（.GitInfo や .Lastmod に必要）
 
