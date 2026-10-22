@@ -428,9 +428,7 @@
     const fragment = document.createDocumentFragment();
     let isFirstOption = true;
     let optionCount = 0;
-    for (let i = 0; i < results.length; i++) {
-      const result = results[i];
-
+    for (const result of results) {
       const li = document.createElement('li');
       li.setAttribute('role', 'presentation');
 
@@ -458,8 +456,7 @@
       li.appendChild(link);
       fragment.appendChild(li);
 
-      for (let j = 0; j < result.matches.length; j++) {
-        const match = result.matches[j];
+      for (const match of result.matches) {
         const hasExcerpt = match.content && match.content !== match.title;
         if (match.title === result.title && !hasExcerpt) continue;
 
