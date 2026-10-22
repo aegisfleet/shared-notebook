@@ -20,129 +20,119 @@
    * Preloads the search index by fetching data and adding it to the FlexSearch index.
    * @returns {Promise<void>} A promise that resolves when the index is preloaded.
    */
-  function preloadIndex() {
-    if (indexPromise) return indexPromise;
-    const attempt = (async () => {
-      const tokenize = '{{- site.Params.search.flexsearch.tokenize | default  "forward" -}}';
+  /** CJKブロックをバイグラム＋全体トークンに分解する */
+  function encodeCjk(text) {
+    const tokens = [];
+    const cjkBlocks = text.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7a3\u3400-\u4dbf\uf900-\ufaff]+/gu);
+    if (!cjkBlocks) return tokens;
 
-      const encode = (str) => {
-        const text = ('' + str).toLowerCase();
-        const tokens = [];
+    for (const block of cjkBlocks) {
+      if (block.length === 1) {
+        tokens.push(block);
+        continue;
+      }
+      for (let i = 0; i < block.length - 1; i++) {
+        tokens.push(block.substring(i, i + 2));
+      }
+      if (block.length <= 8) tokens.push(block);
+    }
+    return tokens;
+  }
 
-        const latinMatches = text.match(/[0-9a-zа-яà-ſè-ӿ؀-ۿঀ-৿Ḁ-ỿ֐-׿]+/gu);
-        if (latinMatches) {
-          tokens.push(...latinMatches);
-        }
+  /**
+   * URLパーツからパンくずテキストと配列を構築する。
+   * @returns {{ crumb: string, crumbParts: string[] }}
+   */
+  function buildBreadcrumb(urlParts, data, route) {
+    let crumb = '';
+    const crumbParts = [];
+    let searchUrl = '/';
 
-        const cjkBlocks = text.match(/[\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uac00-\ud7a3\u3400-\u4dbf\uf900-\ufaff]+/gu);
-        if (cjkBlocks) {
-          for (const block of cjkBlocks) {
-            if (block.length === 1) {
-              tokens.push(block);
-            } else {
-              for (let i = 0; i < block.length - 1; i++) {
-                tokens.push(block.substring(i, i + 2));
-              }
-              if (block.length <= 8) {
-                tokens.push(block);
-              }
-            }
-          }
-        }
-        return tokens;
-      };
+    for (let i = 0; i < urlParts.length; i++) {
+      const urlPart = urlParts[i];
+      searchUrl += urlPart + '/';
 
-      pageIndex = new FlexSearch.Document({
-        tokenize,
-        encode,
-        cache: 100,
-        document: {
-          id: 'id',
-          store: ['title', 'breadcrumbs'],
-          index: "content"
-        }
+      const crumbData = data[searchUrl];
+      if (!crumbData) {
+        console.debug('Excluded page', searchUrl, '- will not be included for search result breadcrumb for', route);
+        continue;
+      }
+
+      let title = data[searchUrl].title;
+      if (title === '_index') {
+        title = urlPart.split('-').join(' ');
+      }
+      crumbParts.push(title);
+      crumb += title;
+      if (i < urlParts.length - 1) crumb += ' > ';
+    }
+    return { crumb, crumbParts };
+  }
+
+  /**
+   * 1ルートのheadingデータをsectionIndexに登録し、ページ全文を返す。
+   * @returns {string} ページ全文（pageIndexへの追加に使用）
+   */
+  function indexSections(routeData, route, crumb, pageId) {
+    let pageContent = '';
+    for (const heading in routeData.data) {
+      const separator = heading.indexOf('#');
+      const hash = separator === -1 ? heading : heading.slice(0, separator);
+      const text = separator === -1 ? '' : heading.slice(separator + 1);
+      const url = hash ? `${route}#${hash}` : route;
+      const title = text || routeData.title;
+
+      const content = routeData.data[heading] || '';
+      const paragraphs = content.split('\n').filter(Boolean);
+
+      sectionIndex.add({
+        id: url, url, title, crumb,
+        pageId: `page_${pageId}`,
+        content: title,
+        ...(paragraphs[0] && { display: paragraphs[0] })
       });
 
+      for (let i = 0; i < paragraphs.length; i++) {
+        sectionIndex.add({ id: `${url}_${i}`, url, title, crumb, pageId: `page_${pageId}`, content: paragraphs[i] });
+      }
+
+      pageContent += ` ${title} ${content}`;
+    }
+    return pageContent;
+  }
+
+  function preloadIndex() {
+    if (indexPromise) return indexPromise;
+
+    const tokenize = '{{- site.Params.search.flexsearch.tokenize | default  "forward" -}}';
+    const encode = (str) => {
+      const text = ('' + str).toLowerCase();
+      const tokens = (text.match(/[0-9a-zа-яà-ſè-ӿ؀-ۿঀ-৿Ḁ-ỿ֐-׿]+/gu) || []);
+      return tokens.concat(encodeCjk(text));
+    };
+
+    const attempt = (async () => {
+      pageIndex = new FlexSearch.Document({
+        tokenize, encode, cache: 100,
+        document: { id: 'id', store: ['title', 'breadcrumbs'], index: 'content' }
+      });
       sectionIndex = new FlexSearch.Document({
-        tokenize,
-        encode,
-        cache: 100,
+        tokenize, encode, cache: 100,
         document: {
-          id: 'id',
-          store: ['title', 'content', 'url', 'display', 'crumb'],
-          index: "content",
-          tag: [{
-            field: "pageId"
-          }]
+          id: 'id', store: ['title', 'content', 'url', 'display', 'crumb'], index: 'content',
+          tag: [{ field: 'pageId' }]
         }
       });
 
       const resp = await fetch(searchDataURL);
       const data = await resp.json();
       let pageId = 0;
+
       for (const route in data) {
-        let pageContent = '';
         ++pageId;
-        const urlParts = route.split('/').filter(x => x !== "" && !x.startsWith('#'));
-
-        let crumb = '';
-        const crumbParts = [];
-        let searchUrl = '/';
-        for (let i = 0; i < urlParts.length; i++) {
-          const urlPart = urlParts[i];
-          searchUrl += urlPart + '/'
-
-          const crumbData = data[searchUrl];
-          if (!crumbData) {
-            console.debug('Excluded page', searchUrl, '- will not be included for search result breadcrumb for', route);
-            continue;
-          }
-
-          let title = data[searchUrl].title;
-          if (title === "_index") {
-            title = urlPart.split("-").map(x => x).join(" ");
-          }
-          crumbParts.push(title);
-          crumb += title;
-
-          if (i < urlParts.length - 1) {
-            crumb += ' > ';
-          }
-        }
-
-        for (const heading in data[route].data) {
-          const separator = heading.indexOf('#');
-          const hash = separator === -1 ? heading : heading.slice(0, separator);
-          const text = separator === -1 ? '' : heading.slice(separator + 1);
-          const url = hash ? `${route}#${hash}` : route;
-          const title = text || data[route].title;
-
-          const content = data[route].data[heading] || '';
-          const paragraphs = content.split('\n').filter(Boolean);
-
-          sectionIndex.add({
-            id: url,
-            url,
-            title,
-            crumb,
-            pageId: `page_${pageId}`,
-            content: title,
-            ...(paragraphs[0] && { display: paragraphs[0] })
-          });
-
-          for (let i = 0; i < paragraphs.length; i++) {
-            sectionIndex.add({
-              id: `${url}_${i}`,
-              url,
-              title,
-              crumb,
-              pageId: `page_${pageId}`,
-              content: paragraphs[i]
-            });
-          }
-
-          pageContent += ` ${title} ${content}`;
-        }
+        const urlParts = route.split('/').filter(x => x !== '' && !x.startsWith('#'));
+        const { crumb, crumbParts } = buildBreadcrumb(urlParts, data, route);
+        const pageContent = indexSections(data[route], route, crumb, pageId);
 
         pageIndex.add({
           id: pageId,
@@ -152,8 +142,7 @@
         });
       }
     })();
-    // Clear the cached promise on failure so the next call retries instead of
-    // returning the rejection forever.
+
     const wrapped = attempt.catch((err) => {
       if (indexPromise === wrapped) indexPromise = null;
       pageIndex = undefined;
