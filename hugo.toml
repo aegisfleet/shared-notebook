@@ -57,3 +57,10 @@ hasCJKLanguage = true
   [params.editURL]
     enable = true
     base = "https://github.com/aegisfleet/shared-notebook/edit/main/content"
+
+  [params.search]
+    enable = true
+    type = "flexsearch"
+    [params.search.flexsearch]
+      maxPageResults = 5
+      maxSectionResults = 3

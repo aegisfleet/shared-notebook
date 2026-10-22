@@ -56,7 +56,11 @@
     document.addEventListener('keydown', handleGlobalKeyDown);
 
     input.addEventListener('input', runSearch);
-    input.addEventListener('compositionend', runSearch);
+    input.addEventListener('compositionend', () => {
+      // IME確定直後は isComposing=true の input イベントが残っている場合があるため
+      // 次の tick で検索を実行することで確実に最新の値で検索する
+      setTimeout(() => runSearch({}), 0);
+    });
     dialog.addEventListener('keydown', handleDialogKeyDown);
 
     // Click on backdrop closes the dialog.

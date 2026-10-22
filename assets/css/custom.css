@@ -82,3 +82,30 @@ html[class~="dark"] .hextra-toc div[class*="shadow-"] {
   box-shadow: 0 -12px 16px #1a1d24 !important;
   border-color: #2b303c !important;
 }
+
+/* 写真横並べ */
+.photo-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  margin: 1rem 0;
+}
+
+.photo-row img {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  .photo-row {
+    flex-direction: column;
+  }
+  .photo-row img {
+    width: 100%;
+  }
+}
+

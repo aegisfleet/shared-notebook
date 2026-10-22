@@ -14,13 +14,19 @@ tags: ["犬"]
 | 性別 | メス |
 | 誕生日 | 2026年3月23日 |
  
-<img src="pamu.jpg" alt="パム" style="width: 50%;"><img src="shop-pop.jpg" alt="お店のポップ" style="width: 50%;">
+<div class="photo-row">
+  <img src="pamu.jpg" alt="パム">
+  <img src="shop-pop.jpg" alt="お店のポップ">
+</div>
 
 ## 初期費用
 
 - 約50万円
 
-<img src="paypay.png" alt="PayPay" style="width: 50%;"><img src="initial_cost.jpg" alt="初期費用" style="width: 50%;">
+<div class="photo-row">
+  <img src="paypay.png" alt="PayPay">
+  <img src="initial_cost.jpg" alt="初期費用">
+</div>
 
 ### 関連費用
 
@@ -59,19 +65,31 @@ tags: ["犬"]
 
 ### 2026年6月（生後3か月ごろ）
 
-<img src="3month.jpg" alt="3か月ごろ" style="width: 50%;"><img src="3month_2.jpg" alt="3か月ごろ" style="width: 50%;">
+<div class="photo-row">
+  <img src="3month.jpg" alt="3か月ごろ">
+  <img src="3month_2.jpg" alt="3か月ごろ">
+</div>
 
 ### 2026年7月（生後4か月ごろ）
 
-<img src="4month.jpg" alt="4か月ごろ" style="width: 50%;"><img src="4month_2.jpg" alt="4か月ごろ" style="width: 50%;">
+<div class="photo-row">
+  <img src="4month.jpg" alt="4か月ごろ">
+  <img src="4month_2.jpg" alt="4か月ごろ">
+</div>
 
 ### 2026年8月（生後5か月ごろ）
 
-<img src="5month.jpg" alt="5か月ごろ" style="width: 50%;"><img src="5month_2.jpg" alt="5か月ごろ" style="width: 50%;">
+<div class="photo-row">
+  <img src="5month.jpg" alt="5か月ごろ">
+  <img src="5month_2.jpg" alt="5か月ごろ">
+</div>
 
 ### 2026年9月（いまここ）
 
-<img src="6month.jpg" alt="6か月ごろ" style="width: 50%;"><img src="6month_2.jpg" alt="6か月ごろ" style="width: 50%;">
+<div class="photo-row">
+  <img src="6month.jpg" alt="6か月ごろ">
+  <img src="6month_2.jpg" alt="6か月ごろ">
+</div>
 
 ## 環境
 
@@ -80,13 +98,20 @@ tags: ["犬"]
 - [アルフレッドカメラ](https://alfred.camera/ja)
   - [古いスマホの再活用ができる](https://alfred.camera/ja/how-it-works)
 
-<img src="surveillance-cameras.png" alt="アプリのイメージ" style="width: 50%;"><img src="surveillance-cameras-2.png" alt="寝てる" style="width: 50%;">
+<div class="photo-row">
+  <img src="surveillance-cameras.png" alt="アプリのイメージ">
+  <img src="surveillance-cameras-2.png" alt="寝てる">
+</div>
 
 - [Tapo C113](https://www.amazon-hikaku.com/b0fnmn6zvr/)
 
 <video src="tapo_c113_rolling.mp4" controls playsinline style="width: 100%;"></video>
-<img src="tapo_c113_day.jpeg" alt="昼間" style="width: 100%;">
-<img src="tapo_c113_night.jpeg" alt="夜中" style="width: 100%;">
+
+<div class="photo-row">
+  <img src="tapo_c113_day.jpeg" alt="昼間">
+  <img src="tapo_c113_night.jpeg" alt="夜中">
+</div>
+
 <img src="tapo_c113_night_2.jpeg" alt="夜中2" style="width: 100%;">
 
 ## ランニングコスト
