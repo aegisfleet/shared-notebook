@@ -170,8 +170,8 @@
    * @returns {Array<{id: string, route: string, title: string, breadcrumbs: string[], matches: Array<{id: string, route: string, title: string, content: string}>}>}
    */
   function performSearch(query) {
-    const maxPageResults = parseInt('{{- site.Params.search.flexsearch.maxPageResults | default 20 -}}', 10);
-    const maxSectionResults = parseInt('{{- site.Params.search.flexsearch.maxSectionResults | default 10 -}}', 10);
+    const maxPageResults = Number.parseInt('{{- site.Params.search.flexsearch.maxPageResults | default 20 -}}', 10);
+    const maxSectionResults = Number.parseInt('{{- site.Params.search.flexsearch.maxSectionResults | default 10 -}}', 10);
     const pageResults = pageIndex.search(query, maxPageResults, { enrich: true, suggest: false })[0]?.result || [];
 
     const groups = [];
