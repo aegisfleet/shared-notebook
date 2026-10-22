@@ -73,3 +73,12 @@ html[class~="dark"] .hextra-search-dialog .hextra-search-input {
 html[class~="dark"] .hextra-search-dialog [role="option"][aria-selected="true"] {
   background-color: #2a2f3a !important;
 }
+
+/* 目次（TOC）下部「このページをGitHubで編集」「トップにスクロール」エリア */
+html[class~="dark"] .hextra-toc .hx\:sticky.hx\:bottom-0,
+html[class~="dark"] .hextra-toc div[class*="hx:sticky"][class*="hx:bottom-0"],
+html[class~="dark"] .hextra-toc div[class*="shadow-"] {
+  background-color: #1a1d24 !important;
+  box-shadow: 0 -12px 16px #1a1d24 !important;
+  border-color: #2b303c !important;
+}
