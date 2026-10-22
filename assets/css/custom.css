@@ -47,6 +47,13 @@ html[class~="dark"] .hextra-sidebar-container {
   background-color: #1a1d24 !important;
 }
 
+/* サイドバー下部テーマ切り替えエリアの白いシャドウをダーク時に上書き */
+html[class~="dark"] .hextra-sidebar-container [data-toggle-animation] {
+  background-color: #1a1d24 !important;
+  box-shadow: 0 -12px 16px #1a1d24 !important;
+  border-color: #2b303c !important;
+}
+
 /* カードコンポーネント */
 html[class~="dark"] .hextra-card {
   background-color: #22262f !important;
