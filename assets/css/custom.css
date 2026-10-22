@@ -54,7 +54,11 @@ html[class~="dark"] .hextra-sidebar-container [data-toggle-animation] {
   border-color: #2b303c !important;
 }
 
-/* カードコンポーネント */
+/* カードコンポーネント: テキストを左上に固定 */
+.hextra-card > div.hx\:mt-auto {
+  margin-top: 0 !important;
+}
+
 html[class~="dark"] .hextra-card {
   background-color: #22262f !important;
   border-color: #323846 !important;
