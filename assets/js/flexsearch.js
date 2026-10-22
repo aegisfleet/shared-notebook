@@ -217,7 +217,7 @@
 
     let optionId = 0;
     return groups
-      .sort((a, b) => {
+      .toSorted((a, b) => {
         if (pageTitleMatches[a._page_rk] !== pageTitleMatches[b._page_rk]) {
           return pageTitleMatches[b._page_rk] - pageTitleMatches[a._page_rk];
         }
