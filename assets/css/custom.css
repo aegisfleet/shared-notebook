@@ -15,9 +15,61 @@ html[class~="dark"] {
   --primary-saturation: 95%;
   --primary-lightness: 55%;
 
+  /* ダークテーマのベースカラーをソフトなダークグレーへ */
+  --color-dark: #1a1d24;
+
   --pagefind-ui-primary: #f97316;
   --pagefind-ui-text: #f3f4f6;
-  --pagefind-ui-background: #18181b;
-  --pagefind-ui-border: #27272a;
-  --pagefind-ui-tag: #27272a;
+  --pagefind-ui-background: #22262f;
+  --pagefind-ui-border: #323846;
+  --pagefind-ui-tag: #2a2f3a;
+}
+
+/* ダークテーマ時の背景・コンポーネント配色（ダークグレー化） */
+html.dark,
+html[class~="dark"] {
+  background-color: #1a1d24;
+}
+
+html[class~="dark"] body {
+  background-color: #1a1d24 !important;
+  color: #e2e8f0;
+}
+
+/* ナビゲーションバー */
+html[class~="dark"] .hextra-nav-container-blur {
+  background-color: rgba(26, 29, 36, 0.85) !important;
+  border-bottom-color: #2b303c !important;
+}
+
+/* サイドバー */
+html[class~="dark"] .hextra-sidebar-container {
+  background-color: #1a1d24 !important;
+}
+
+/* カードコンポーネント */
+html[class~="dark"] .hextra-card {
+  background-color: #22262f !important;
+  border-color: #323846 !important;
+}
+
+html[class~="dark"] .hextra-card:hover {
+  background-color: #2a2f3a !important;
+  border-color: #434a5c !important;
+}
+
+/* 検索ダイアログモーダル */
+html[class~="dark"] .hextra-search-dialog {
+  background-color: #22262f !important;
+  border-color: #323846 !important;
+}
+
+html[class~="dark"] .hextra-search-dialog .hextra-search-input {
+  background-color: #1a1d24 !important;
+  border-color: #323846 !important;
+  color: #f3f4f6 !important;
+}
+
+html[class~="dark"] .hextra-search-dialog [role="option"][aria-selected="true"] {
+  background-color: #2a2f3a !important;
 }
