@@ -1,62 +1,66 @@
 baseURL = "https://aegisfleet.github.io/shared-notebook/"
-locale = "ja"
-defaultContentLanguage = "ja"
 title = "Shared Notebook"
+defaultContentLanguage = "ja"
+hasCJKLanguage = true
 
 [module]
-  replacements = "github.com/colinwilson/lotusdocs -> lotusdocs"
   [[module.imports]]
-    path = "github.com/colinwilson/lotusdocs"
-    disable = false
-  [[module.imports]]
-    path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
-    disable = false
+    path = "github.com/imfing/hextra"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true  # HTMLタグの使用を許可
-
+      unsafe = true
   [markup.highlight]
-    codeFences = true
-    guessSyntax = true
-    lineNos = false
-    style = "lotusdocs"
+    noClasses = false
+
+[menu]
+  [[menu.main]]
+    name = "ドキュメント"
+    pageRef = "/docs"
+    weight = 1
+
+  [[menu.main]]
+    name = "検索"
+    weight = 2
+    [menu.main.params]
+      type = "search"
+
+  [[menu.main]]
+    name = "GitHub"
+    url = "https://github.com/aegisfleet/shared-notebook"
+    weight = 3
+    [menu.main.params]
+      icon = "github"
 
 [params]
-  # Google Fonts
-  google_fonts = [
-    ["Inter", "300, 400, 600, 700"],
-    ["Fira Code", "500, 700"]
-  ]
-  sans_serif_font = "Inter"
-  mono_font = "Fira Code"
+  [params.theme]
+    default = "system"
+    displayToggle = true
 
-  # サイト情報
-  author = "ポち"
-  description = "個人ノート・ドキュメント共有サイト"
+  [params.navbar]
+    displayLogo = true
+    displayTitle = true
+    [params.navbar.logo]
+      path = "images/logo.png"
 
-  # ソーシャル
-  [params.social]
-    github = "aegisfleet/shared-notebook"
+  [params.page]
+    width = "normal"
 
-  [params.docs]
-    title = "Shared Notebook"
-    pathName = "docs"
-    themeColor = "orange"
-    darkMode = true
-    prism = true
-    prismTheme = "lotusdocs"
-    breadcrumbs = true
-    descriptions = true
-    backToTop = true
-    navDesc = true
-    sidebarIcons = true
-    titleIcon = true
-    repoURL = "https://github.com/aegisfleet/shared-notebook"
-    repoBranch = "main"
+  [params.imageZoom]
+    enable = true
 
-  [params.flexsearch]
-    enabled = true
-    tokenize = "forward"
-    maxResult = 5
+  [params.footer]
+    displayCopyright = true
+    displayPoweredBy = true
+
+  [params.editURL]
+    enable = true
+    base = "https://github.com/aegisfleet/shared-notebook/edit/main/content"
+
+  [params.search]
+    enable = true
+    type = "flexsearch"
+    [params.search.flexsearch]
+      maxPageResults = 5
+      maxSectionResults = 3

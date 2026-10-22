@@ -1,0 +1,10 @@
+<div style="display:flex;gap:8px;align-items:flex-start;">
+  <figure style="flex:1;margin:0;">
+    <img src="{{ .Get "src1" }}" alt="{{ .Get "alt1" }}" style="width:100%;height:auto;display:block;">
+    {{- with .Get "alt1" }}<figcaption style="text-align:center;font-size:0.8em;color:#888;">{{ . }}</figcaption>{{- end }}
+  </figure>
+  <figure style="flex:1;margin:0;">
+    <img src="{{ .Get "src2" }}" alt="{{ .Get "alt2" }}" style="width:100%;height:auto;display:block;">
+    {{- with .Get "alt2" }}<figcaption style="text-align:center;font-size:0.8em;color:#888;">{{ . }}</figcaption>{{- end }}
+  </figure>
+</div>

@@ -29,24 +29,36 @@ jobs:
     runs-on: ubuntu-latest
     env:
       HUGO_VERSION: 0.162.1
+      GO_VERSION: "1.22"
+      NODE_VERSION: "20"
     steps:
+      - name: リポジトリのチェックアウト
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 全履歴を取得（.GitInfo や .Lastmod に必要）
+
+      - name: Go のセットアップ（Hugo Modules用）
+        uses: actions/setup-go@v5
+        with:
+          go-version: "${{ env.GO_VERSION }}"
+          cache: true
+
+      - name: Node.js のセットアップ（Pagefind用）
+        uses: actions/setup-node@v4
+        with:
+          node-version: "${{ env.NODE_VERSION }}"
+
       - name: Hugo のセットアップ
         uses: peaceiris/actions-hugo@v3
         with:
           hugo-version: "${{ env.HUGO_VERSION }}"
           extended: true
 
-      - name: リポジトリのチェックアウト（サブモジュールを含む）
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive  # PaperMod テーマを取得
-          fetch-depth: 0         # 全履歴を取得（.GitInfo や .Lastmod に必要）
-
       - name: GitHub Pages の設定
         id: pages
         uses: actions/configure-pages@v5
 
-      - name: Hugo でビルド
+      - name: Hugo ビルド & Pagefind インデックス生成
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           HUGO_ENVIRONMENT: production
@@ -55,6 +67,7 @@ jobs:
           hugo \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/"
+          npx -y pagefind --site public
 
       - name: ビルド成果物のアップロード
         uses: actions/upload-pages-artifact@v3
