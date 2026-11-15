@@ -9,9 +9,9 @@ tags: ["AI", "開発環境", "エージェント"]
 
 - 開発
   - IDE
-    - VS Code - GitHub Copilot (Gemini 4.8 Flash) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
+    - VS Code - GitHub Copilot (GPT-6 Luna) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
   - 自律型AIエージェント
-    - GitHub Copilot Coding Agent (Claude Sonnet 5) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
+    - GitHub Copilot Coding Agent (Claude Haiku 5.5) ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
 - 情報収集
   - 技術調査
     - Google NotebookLM ![Enterprise](https://img.shields.io/badge/-Enterprise-red)
